@@ -8,7 +8,7 @@ This mini-task was completely inspired and based off what Richard Dawkin's perfo
 his book 'The Blind Watchmaker' as a way of explaining accumulations of random small change to
 generate complex sequences through selection and inheritance.
 
-The script runs with Python 2.7
+The script runs with Python 3.6
 
 By default, the script will generate 'Me thinks it is like a Weasel' which is what Richard Dawkin's
 uses for his example. The phrase is an excerpt from Hamlet. You can specify a different target as follows:

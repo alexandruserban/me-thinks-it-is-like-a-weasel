@@ -36,7 +36,7 @@ def single_point_crossover(parent1, parent2):
 
     split_point = random.randint(1, len(parent1) - 2)
 
-    for index in xrange(len(parent1)):
+    for index in range(len(parent1)):
         if index < split_point:
             child1[index] = parent2[index]
         else:
@@ -101,7 +101,7 @@ def selection(population, fitness_values):
 
 def argmax(numbers):
     max_index = None
-    max_value = -sys.maxint - 1
+    max_value = -float("inf") - 1
 
     for index, value in enumerate(numbers):
         if value > max_value:
@@ -144,7 +144,7 @@ if __name__ == '__main__':
     t0 = time.time()
     count = 0
 
-    print 'Target = {}'.format(target)
+    print('Target = {}'.format(target))
     while True:
         fitness_values = evaluate(population, target)
         count += 1
@@ -152,7 +152,7 @@ if __name__ == '__main__':
         max_index, max_value = argmax(fitness_values)
 
         best = ''.join(population[max_index])
-        print 'Gen {}: {} ({})'.format(count, best, max_value)
+        print('Gen {}: {} ({})'.format(count, best, max_value))
 
         if best == target:
             break
@@ -173,4 +173,4 @@ if __name__ == '__main__':
 
         population = tournament(population + new_population, target, population_size)
 
-    print 'Reached target in {0:.3g} seconds'.format(time.time() - t0)
+    print('Reached target in {0:.3g} seconds'.format(time.time() - t0))
